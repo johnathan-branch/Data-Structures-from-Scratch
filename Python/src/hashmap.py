@@ -1,7 +1,7 @@
 """
 04/03/2025: J. BRANCH
 
-Goal is to create an implementation for a simple HashMap data structure from 'scratch'.
+The goal is to create an implementation for a HashMap data structure from 'scratch'.
 
 Plan:
     - List datatype used as the container for implementing the hashmap
@@ -131,59 +131,3 @@ class HashMap():
                         term_char = ", " 
                     print(kv[1], end=term_char)
         return None
-
-
-def main() -> None:
-    hashmap = HashMap()
-    kv_pairs = [("key1", 1000), (12, "John Doe"), ((3,4), "Tony Stark"), ("key1", [234, 456, 789, "JB"])]
-
-    print("\n-------------------- Adding k-v pairs to hashmap --------------------")
-    print(f"Adding key={kv_pairs[0][0]}, value={kv_pairs[0][1]})...")
-    hashmap.add(key=kv_pairs[0][0], value=kv_pairs[0][1])
-
-    print(f"Adding key={kv_pairs[1][0]}, value={kv_pairs[1][1]})...")
-    hashmap.add(key=kv_pairs[1][0], value=kv_pairs[1][1])
-
-    print(f"Adding key={kv_pairs[2][0]}, value={kv_pairs[2][1]})...")
-    hashmap.add(key=kv_pairs[2][0], value=kv_pairs[2][1])
-
-    print(f"Adding key={kv_pairs[3][0]}, value={kv_pairs[3][1]})...")
-    hashmap.add(key=kv_pairs[3][0], value=kv_pairs[3][1])
-
-
-    print("\n-------------------- Printing out k-v pairs --------------------")
-    hashmap.print_kv_pairs()
-
-    print("\n-------------------- Getting values from hashmap --------------------")
-    print(f"Searching hashmap for key={34}, this should return None... {hashmap.get(key=34)}", # should return None
-        f"Searching hashmap for key={kv_pairs[0][0]}... {hashmap.get(key=kv_pairs[0][0])}",
-        f"Searching hashmap for key={kv_pairs[1][0]}... {hashmap.get(key=kv_pairs[1][0])}",
-        f"Searching hashmap for key={kv_pairs[2][0]}... {hashmap.get(key=kv_pairs[2][0])}",
-        f"Searching hashmap for key={kv_pairs[3][0]}... {hashmap.get(key=kv_pairs[3][0])}",
-        sep="\n"
-    )
-
-    print("\n-------------------- Deleting values from hashmap --------------------")
-    print(f"Attempting to delete k-v pair associated with key={kv_pairs[0][0]}, value={34}... this should not result in a succesful deletion")
-    hashmap.delete(key=kv_pairs[0][0], target_value=34)
-    hashmap.print_kv_pairs()
-
-    print(f"Attempting to delete k-v pair associated with key={kv_pairs[0][0]}, value={kv_pairs[0][1]}... this should result in a successful deletion")
-    hashmap.delete(key=kv_pairs[0][0], target_value=kv_pairs[0][1])
-    hashmap.print_kv_pairs()
-
-    print(f"Attempting to delete k-v pair associated with key={kv_pairs[1][0]}... this should result in a successful deletion")
-    hashmap.delete(key=kv_pairs[1][0])
-    hashmap.print_kv_pairs()
-
-    print(f"Attempting to delete k-v pair associated with key={kv_pairs[2][0]}... this should result in a successful deletion")
-    hashmap.delete(key=kv_pairs[2][0])
-    hashmap.print_kv_pairs()
-
-    print(f"Attempting to delete k-v pair associated with key={kv_pairs[3][0]}... this should result in a successful deletion")
-    hashmap.delete(key=kv_pairs[3][0])
-    hashmap.print_kv_pairs()
-
-
-if __name__ == "__main__":
-    main()
