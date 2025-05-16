@@ -10,7 +10,7 @@ Plan:
         
         DoublyLinkedList
             |
-           head --> <--[prev][Node(value)][next]--> <--[prev][Node(value)][next]--> <--...--> <-- last 
+           head --> <--[prev][Node(value)][next]--> <--[prev][Node(value)][next]--> <--...--> <-- tail 
     
     - Node class (data-only class)
         - contains a member to store a node value 
@@ -19,7 +19,7 @@ Plan:
     
     - DoublyLinkedList class
         - contains a head member that is either None or points to the first node in the linkedlist
-        - contains a head member that is either None or points to the last node in the linkedlist
+        - contains a tail member that is either None or points to the last node in the linkedlist
         - contains a length member that keeps track of the current length of the linkedlist
 
     - Public Methods:
@@ -75,9 +75,6 @@ Plan:
 
         17. _is_empty(self): Returns True if the linkedlist is empty, otherwise returns False
             return: bool
-
-        18. _get_last_node(self): Returns the last node in the linkedlist
-            return: Node
 """
 
 from typing import Any
@@ -125,7 +122,7 @@ class DoublyLinkedList:
         return
         
     def insert(self, index: int, value: Any) -> None:
-        """Creates and inserts a new node at the specified index (note - use append method to insert new node at the end)"""
+        """Creates and inserts a new node at the specified index"""
         if (not self._validate_index(index, allow_last_index=True)):
             raise IndexError("Invalid index")
         
@@ -176,17 +173,17 @@ class DoublyLinkedList:
         """Removes and returns the last element in the linkedlist"""
         if self._is_empty():
             return None
-        val_to_return = self.tail.value
+        value = self.tail.value
         self.remove(self.length-1)
-        return val_to_return
+        return value
         
     def pop_first(self) -> Any | None:
         """Removes and returns the first element in the linkedlist"""
         if self._is_empty():
             return None
-        val_to_return = self.head.value
+        value = self.head.value
         self.remove(0)
-        return val_to_return
+        return value
 
     def get(self, index: int) -> Any | None:
         """Returns the value of the node at the specified index"""
@@ -225,7 +222,6 @@ class DoublyLinkedList:
                 return_list.append(copy.deepcopy(self._get_node(index=i)))
             else:
                 return_list.append(copy.deepcopy(self._get_node(index=i).value))
-        
         return return_list
 
     def __len__(self) -> int:
@@ -249,12 +245,10 @@ class DoublyLinkedList:
             retrieved_node = self.head 
             for _ in range(index):
                 retrieved_node = retrieved_node.next
-        
         else:
             retrieved_node = self.tail 
             for _ in range( (self.length - index - 1) ):
                 retrieved_node = retrieved_node.prev
-
         return retrieved_node
 
     def _validate_index(self, index: int, allow_last_index = False) -> bool:
