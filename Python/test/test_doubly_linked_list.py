@@ -1,10 +1,10 @@
-from src.singly_linked_list import SinglyLinkedList
+from src.doubly_linked_list import DoublyLinkedList
 
 TEST_VALS = (10, 20, 30)
 EXTENDED_TEST_VALS = (10, 20, 30, 40, 50, 60)
 
 def test_append():
-    linkedlist = SinglyLinkedList()
+    linkedlist = DoublyLinkedList()
 
     for val in TEST_VALS:
         assert linkedlist.append(val) == None
@@ -15,7 +15,7 @@ def test_append():
     del linkedlist
 
 def test__len__():
-    linkedlist = SinglyLinkedList()
+    linkedlist = DoublyLinkedList()
 
     for val in TEST_VALS:
         linkedlist.append(val)
@@ -25,7 +25,7 @@ def test__len__():
     del linkedlist
 
 def test_to_list():
-    linkedlist = SinglyLinkedList()
+    linkedlist = DoublyLinkedList()
 
     for val in TEST_VALS:
         linkedlist.append(val)
@@ -38,7 +38,7 @@ def test_to_list():
     del linkedlist
     
 def test__iter__():
-    linkedlist = SinglyLinkedList()
+    linkedlist = DoublyLinkedList()
 
     for val in TEST_VALS:
         linkedlist.append(val)
@@ -49,7 +49,7 @@ def test__iter__():
     del linkedlist
 
 def test__repr__():
-    linkedlist = SinglyLinkedList()
+    linkedlist = DoublyLinkedList()
 
     assert type(repr(linkedlist)) == str
     assert len(repr(linkedlist)) > 0
@@ -57,7 +57,7 @@ def test__repr__():
     del linkedlist
 
 def test_prepend():
-    linkedlist = SinglyLinkedList()
+    linkedlist = DoublyLinkedList()
     local_TEST_VALS = list(TEST_VALS)
 
     for val in local_TEST_VALS:
@@ -71,7 +71,7 @@ def test_prepend():
     del linkedlist
 
 def test_insert():
-    linkedlist = SinglyLinkedList()
+    linkedlist = DoublyLinkedList()
 
     assert linkedlist.append("initial value") == None
 
@@ -84,7 +84,7 @@ def test_insert():
     del linkedlist
 
 def test_remove():
-    linkedlist = SinglyLinkedList()
+    linkedlist = DoublyLinkedList()
     num_deletions = 0
 
     for val in EXTENDED_TEST_VALS:
@@ -108,7 +108,7 @@ def test_remove():
     del linkedlist
 
 def test_set():
-    linkedlist = SinglyLinkedList()
+    linkedlist = DoublyLinkedList()
 
     for val in TEST_VALS:
         linkedlist.append(val)
@@ -122,7 +122,7 @@ def test_set():
     del linkedlist
 
 def test_find():
-    linkedlist = SinglyLinkedList()
+    linkedlist = DoublyLinkedList()
 
     for val in TEST_VALS:
         linkedlist.append(val)
@@ -140,7 +140,7 @@ def test_find():
     del linkedlist
 
 def test_contains():
-    linkedlist = SinglyLinkedList()
+    linkedlist = DoublyLinkedList()
 
     for val in TEST_VALS:
         linkedlist.append(val)
@@ -154,5 +154,34 @@ def test_contains():
         val_not_in_list += 1
 
     assert linkedlist.contains(val_not_in_list) == False
+
+    del linkedlist
+
+def test_pop():
+    linkedlist = DoublyLinkedList()
+    local_TEST_VALS = list(TEST_VALS)
+
+    for val in local_TEST_VALS:
+        assert linkedlist.append(val) == None
+    
+    local_TEST_VALS.reverse()
+
+    for val in local_TEST_VALS:
+        assert linkedlist.pop() == val
+
+    assert linkedlist.pop() == None
+
+    del linkedlist
+
+def test_pop_first():
+    linkedlist = DoublyLinkedList()
+
+    for val in TEST_VALS:
+        assert linkedlist.append(val) == None
+
+    for val in TEST_VALS:
+        assert linkedlist.pop_first() == val
+
+    assert linkedlist.pop_first() == None
 
     del linkedlist
