@@ -50,7 +50,7 @@ Plan:
         9. find(self, value: Any): Returns the index of the first occurence of value, if not found returns -1
             return: int
 
-        10. contains(self, value: Any): Returns true if the specified value is in the linkedlist, otherwise returns False
+        10. contains(self, value: Any): Returns True if the specified value is in the linkedlist, otherwise returns False
             return: bool
 
         11. to_list(self, return_nodes: bool = False): Returns a Python list of the linkedlist node values (default) or nodes
@@ -70,7 +70,7 @@ Plan:
         15. _get_node(self, index: int): Return the node specified at index
             return: Node
 
-        16. _validate_index(self, index: int): Returns True if the Node is in valid bounds, otherwise returns False
+        16. _validate_index(self, index: int, allow_last_index: bool = False): Returns True if the Node is in valid bounds, otherwise returns False
             return: bool
 
         17. _is_empty(self): Returns True if the linkedlist is empty, otherwise returns False
