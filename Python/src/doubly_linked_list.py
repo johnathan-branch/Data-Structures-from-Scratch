@@ -14,8 +14,8 @@ Plan:
     
     - Node class (data-only class)
         - contains a member to store a node value 
-        - contains a memeber to store a reference to the prev node
-        - contains a memeber to store a reference to the next node
+        - contains a member to store a reference to the prev node
+        - contains a member to store a reference to the next node
     
     - DoublyLinkedList class
         - contains a head member that is either None or points to the first node in the linkedlist
