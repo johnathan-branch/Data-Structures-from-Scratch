@@ -14,62 +14,62 @@ Plan:
     
     - Node class (data-only class)
         - contains a member to store a node value 
-        - contains a memeber to store a reference to the next node
+        - contains a member to store a reference to the next node
     
     - SinglyLinkedList class
         - contains a head member that is either None or points to the first node in the linkedlist
         - contains a length member that keeps track of the current length of the linkedlist
 
-    - Public Methods:
-        1. append(self, value: Any): Creates and inserts a new node at the end of the linkedlist
-            return: None 
-        
-        2. prepend(self, value: Any): Creates and inserts a new node at the beginning of the linkedlist
-            return: None
-
-        3. insert(self, index: int, value: Any): Creates and inserts a new node at the specified index
-            return: None
-
-        4. remove(self, index: int): Removes node at specified index
-            return: None
-
-        5. get(self, index: int): Returns the value of the node at the specified index
-            return: Any
-
-        6. set(self, index: int, value: Any): Updates the value at the specified index
-            return: None
-
-        7. find(self, value: Any): Returns the index of the first occurence of value, if not found returns -1
-            return: int
-
-        8. contains(self, value: Any): Returns true if the specified value is in the linkedlist, otherwise returns False
-            return: bool
-
-        9. to_list(self, return_nodes: bool = False): Returns a Python list of the linkedlist node values (default) or nodes
-            return: list[Any]
-
-        10. __len__(self): Dunder method to implement len(linkedlist obj) functionality
-            return: int
-
-        11. __iter__(self): Dunder method to make linkedlist objects iterable, e.g. allows object to be iterated over for-loops
-            return: iterator
-
-        12. __repr__(self): Dunder method to implement repr(linkedlist obj) functionality
-            return: str
-
-    - Internal Methods:
-        
-        13. _get_node(self, index: int): Return the node specified at index
-            return: Node
-
-        14. _validate_index(self, index: int): Returns True if the Node is in valid bounds, otherwise returns False
-            return: bool
-
-        15. _is_empty(self): Returns True if the linkedlist is empty, otherwise returns False
-            return: bool
-
-        16. _get_last_node(self): Returns the last node in the linkedlist
-            return: Node
+        - Public Methods:
+            1. append(self, value: Any): Creates and inserts a new node at the end of the linkedlist
+                return: None 
+            
+            2. prepend(self, value: Any): Creates and inserts a new node at the beginning of the linkedlist
+                return: None
+    
+            3. insert(self, index: int, value: Any): Creates and inserts a new node at the specified index
+                return: None
+    
+            4. remove(self, index: int): Removes node at specified index
+                return: None
+    
+            5. get(self, index: int): Returns the value of the node at the specified index
+                return: Any
+    
+            6. set(self, index: int, value: Any): Updates the value at the specified index
+                return: None
+    
+            7. find(self, value: Any): Returns the index of the first occurence of value, if not found returns -1
+                return: int
+    
+            8. contains(self, value: Any): Returns true if the specified value is in the linkedlist, otherwise returns False
+                return: bool
+    
+            9. to_list(self, return_nodes: bool = False): Returns a Python list of the linkedlist node values (default) or nodes
+                return: list[Any]
+    
+            10. __len__(self): Dunder method to implement len(linkedlist obj) functionality
+                return: int
+    
+            11. __iter__(self): Dunder method to make linkedlist objects iterable, e.g. allows object to be iterated over for-loops
+                return: iterator
+    
+            12. __repr__(self): Dunder method to implement repr(linkedlist obj) functionality
+                return: str
+    
+        - Internal Methods:
+            
+            13. _get_node(self, index: int): Return the node specified at index
+                return: Node
+    
+            14. _validate_index(self, index: int): Returns True if the Node is in valid bounds, otherwise returns False
+                return: bool
+    
+            15. _is_empty(self): Returns True if the linkedlist is empty, otherwise returns False
+                return: bool
+    
+            16. _get_last_node(self): Returns the last node in the linkedlist
+                return: Node
 """
 
 from typing import Any
