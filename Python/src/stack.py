@@ -54,7 +54,11 @@ Plan:
                 return: bool
 """
 from typing import Any
-from src.singly_linked_list import SinglyLinkedList
+
+if __name__ == "__main__":
+    from singly_linked_list import SinglyLinkedList
+else:
+    from src.singly_linked_list import SinglyLinkedList
 
 class Stack:
     def __init__(self):
