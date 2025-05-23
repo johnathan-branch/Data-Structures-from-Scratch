@@ -23,7 +23,6 @@ def test_peek():
         assert queue.peek() == val
         queue.dequeue()
         
-
     del queue
 
 def test_is_empty():
